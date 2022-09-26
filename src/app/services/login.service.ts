@@ -1,6 +1,6 @@
 import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, of, switchMap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user.model';
 
@@ -12,8 +12,17 @@ const { apiUsers, apiKey } = environment;
 export class LoginService {
 
   constructor(private readonly http: HttpClient) { }
-  public login(): Observable<User> {
+
+  public login(username: string): Observable<User> {
     return this.checkUsername(username)
+    .pipe(
+      switchMap((user: User | undefined) => {
+        if (user === undefined) {
+          return this.createUser(username)
+        }
+        return of(user);
+      })
+    )
   }
 
   private checkUsername(username: string): Observable<User | undefined> {
@@ -33,6 +42,9 @@ export class LoginService {
       "Content-Type": "application/json",
       "x-api-key": apiKey
     })
+
+    return this.http.post<User>(apiUsers, user, { headers } ) 
+  
   }
 
 }
