@@ -2,6 +2,8 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { finalize } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Pokemon } from '../models/pokemon.model';
+import { HttpClient } from '@angular/common/http';
 
 const { apiPokemons} = environment;
 
@@ -36,7 +38,7 @@ export class PokemonCatalogueService {
           this._loading = false;
         })
       )
-      .subscripbe({
+      .subscribe({
         next: (pokemons: Pokemon[])=> {
           this._pokemons = pokemons;
         },
