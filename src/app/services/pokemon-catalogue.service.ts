@@ -22,6 +22,10 @@ export class PokemonCatalogueService {
     return this._error;
   }
 
+  get loading(): boolean {
+    return this._loading;
+  }
+
   constructor(private readonly http: HttpClient) {}
 
   public findAllPokemons(): void {
