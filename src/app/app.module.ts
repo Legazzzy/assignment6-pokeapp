@@ -20,7 +20,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     PokemonCataloguePage,
     ProfilePage,
     LoginFormComponent,
-    PokemonListComponent
+    PokemonListComponent,
     NavbarComponent
   ],
 
