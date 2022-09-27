@@ -1,19 +1,21 @@
 <ng-container *ngIf='user !== undefined'>
     <nav class="navbar-1">
-        <img src='../../../assets/navbar_art.png' width="20%" height="20%"/>
-        <span class="navbar-title">Pokemon trainer</span>
-        <ul class="navbar-buttons">
-            <li>
-                <img src='../../../assets/trainer_art_placeholder.png' routerLink="/profile" width="10%" height="10%" alt="To trainer profile"/>
+        <img class="picture" src='../../../assets/pokemon-seeklogo.png'/>
+        <span class="navbar-title"><h1>Pokemon trainer</h1></span>
+        <div class="navbar-buttons">
+            <div class="trainer">
+                <img src='../../../assets/trainer_art_placeholder.png' routerLink="/profile" width="40px" alt="To trainer profile"/>
                 <a>Trainer profile</a>
-            </li>
-            <li>
-                <img src='../../../assets/pokedex.png' routerLink="/pokemons" width="10%" height="10%" alt="To Pokedex catalogue"/>
+            </div>
+            <div class="pokedex">
+                <img src='../../../assets/pokedex.png' routerLink="/pokemons" width="40px" alt="To Pokedex catalogue"/>
                 <a>Pokedex</a>
-            </li>
-            <li>
-                <a (click)="handleLogout()"  routerLink="/login">Exit (Placeholder)</a>
-            </li>
-        </ul>
+            </div>
+            <div class="logout">
+                <img src='../../../assets/exit-icon.svg' (click)="handleLogout()"  routerLink="/login" width="40px" alt="To Pokedex catalogue"/>
+                <a>Log out</a>
+
+            </div>
+        </div>
     </nav>
 </ng-container>
