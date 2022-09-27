@@ -55,7 +55,7 @@ export class PokemonCatalogueService {
 
   public findAllPokemons(): void {
     this._loading = true;
-    this.http.get<PokemonFetch>(apiPokemons)
+    this.http.get<PokemonFetch>(`${apiPokemons}?limit=2000`)
       .pipe(
         finalize(() => {
           this._loading = false;

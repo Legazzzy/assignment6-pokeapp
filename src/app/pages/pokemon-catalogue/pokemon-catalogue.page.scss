@@ -1,0 +1,27 @@
+$poke: rgb(253, 221, 59);
+$pokeDark: rgb(215, 199, 108);
+
+main{
+    height: 90vh;
+    display: grid;
+    grid-template-areas:
+      'header header header header header header'
+      'menu menu main main right right'
+      'menu footer footer footer footer footer';
+    gap: 10px;
+    background-color: $poke;
+    padding: 10px;
+}
+
+#pokemondiv{
+    grid-area: main;
+    margin:4px, 4px;
+    padding:4px;
+    background-color: #2196F3;
+    width: 500px;
+    height:70vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 20px;
+}
