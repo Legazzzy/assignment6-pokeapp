@@ -1,6 +1,6 @@
 
 $poke: rgb(253, 221, 59);
-$pokeDark: rgb(194, 169, 31);
+$pokeDark: rgb(215, 199, 108);
 
 
 .picture {
@@ -32,17 +32,21 @@ $pokeDark: rgb(194, 169, 31);
 }
 
 .user-login-form {
-    margin:0px;
-    padding-top: 50px;
-    gap:4%;
+    padding-top: 10%;
+    gap:1%;
     background-color: $poke;
     border-style: none;
-    min-height: 500px;
+    min-height: 1000px;
     display: flex;
     flex-direction: column;
     text-align: center;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
 }
 .user-login-button{
     display: flex;
