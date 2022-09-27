@@ -71,12 +71,6 @@ export class PokemonCatalogueService {
       })
     }
 
-  public printAll(): void {
-    console.log(this._pokemonFetched);
-    
-    this._pokemonFetched.results.forEach(pokemon => console.log(pokemon)
-    )
-  }
 
   public fetchAllPokemons(pokemons: PokemonFetch): void {
     this._loading = true;
@@ -89,9 +83,18 @@ export class PokemonCatalogueService {
       )
       .subscribe({
         next: (pokemonResult: Pokemon) => {
-          this._pokemons.push(pokemonResult)
           console.log(pokemonResult);
-          
+          this._pokemons.push({
+            id: pokemonResult.id,
+            name: pokemonResult.name,
+            base_experience: pokemonResult.base_experience,
+            order: pokemonResult.order,
+            height: pokemonResult.height,
+            weight: pokemonResult.weight,
+            sprites: {
+              front_default: pokemonResult.sprites.front_default
+            }
+          })
         },
         error: (error: HttpErrorResponse) => {
           this._error = error.message;
