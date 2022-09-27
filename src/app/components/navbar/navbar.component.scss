@@ -18,6 +18,7 @@ $pokeDark: rgb(194, 169, 31);
     display: flex;
     height: 100px;
     width: 100%;
+    padding-top: 1%;
     
 }
 
@@ -43,8 +44,13 @@ $pokeDark: rgb(194, 169, 31);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
     font-weight: bold;
+    width: 20%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    cursor: pointer;
 
 }
+
 .pokedex{
     display: flex;
     text-align:center;
@@ -54,6 +60,10 @@ $pokeDark: rgb(194, 169, 31);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
     font-weight: bold;
+    width: 20%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    cursor: pointer;
 
 }
 .logout{
@@ -65,5 +75,21 @@ $pokeDark: rgb(194, 169, 31);
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
     font-weight: bold;
-
+    width: 20%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    cursor: pointer;
 }
+.trainer:hover{
+    background-color: $pokeDark;
+    color:white;
+}
+.pokedex:hover{
+    background-color: $pokeDark;
+    color:white;
+}
+.logout:hover{
+    background-color: $pokeDark;
+    color:white;
+}
+
