@@ -12,11 +12,12 @@ const { apiPokemons} = environment;
 })
 export class PokemonCatalogueService {
 
+  private pokemonList: Pokemon[] = []
   private _pokemons: Pokemon[] = [];
   private _error: string = "";
   private _loading : boolean = false;
 
-  get pokemons():Pokemon[] {
+  get pokemons(): Pokemon[] {
     return this._pokemons;
   }
 
@@ -38,13 +39,13 @@ export class PokemonCatalogueService {
           this._loading = false;
         })
       )
-      .subscribe({
-        next: (pokemons: Pokemon[])=> {
+      .subscribe({   
+        next: (pokemons: Pokemon[]) => {          
           this._pokemons = pokemons;
         },
         error: (error: HttpErrorResponse) => {
           this._error = error.message;
         }
       })
-  }
+    }
 }
