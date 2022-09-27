@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user.model';
 import { LoginService } from 'src/app/services/login.service';
@@ -9,7 +9,7 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
-export class LoginFormComponent {
+export class LoginFormComponent implements OnInit {
 
   @Output() login: EventEmitter<void> = new EventEmitter();
 
@@ -17,6 +17,12 @@ export class LoginFormComponent {
     private readonly loginService: LoginService,
     private readonly userService: UserService
     ) { }
+
+  ngOnInit(): void {
+    if (this.userService.user) {
+      this.login.emit();
+    }
+  }
 
   public loginSubmit(loginForm: NgForm): void {
 
