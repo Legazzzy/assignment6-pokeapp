@@ -5,16 +5,19 @@ $pokeDark: rgb(194, 169, 31);
     margin-top: 90px;
     margin-left:20px;
     width: 150px;
-
 }
 
 .navbar-1 {
+    border-bottom: 5px;
+    border-bottom-style: solid;
+    border-color: $pokeDark;
     align-items: center;
     background-color: $poke;
     display: flex;
     height: 100px;
     position: sticky;
     width: 100%;
+    
 }
 
 .navbar-title {
