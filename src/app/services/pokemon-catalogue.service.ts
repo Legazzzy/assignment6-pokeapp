@@ -5,6 +5,7 @@ import { environment } from 'src/environments/environment';
 import { Pokemon } from '../models/pokemon.model';
 import { PokemonFetch }  from '../models/pokemonFetch.model';
 import { HttpClient } from '@angular/common/http';
+import { CapitalizedUtil } from '../utils/capitalized.util';
 
 const { apiPokemons} = environment;
 
@@ -86,7 +87,7 @@ export class PokemonCatalogueService {
           console.log(pokemonResult);
           this._pokemons.push({
             id: pokemonResult.id,
-            name: pokemonResult.name,
+            name: CapitalizedUtil.capitalized(pokemonResult.name),
             base_experience: pokemonResult.base_experience,
             order: pokemonResult.order,
             height: pokemonResult.height,

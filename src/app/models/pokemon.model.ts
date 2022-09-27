@@ -1,6 +1,6 @@
 export interface Pokemon {
-    id: String;
-    name: String;
+    id: string;
+    name: string;
     base_experience: number;
     order: number;
     height: number;
