@@ -1,13 +1,20 @@
+
+
 <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)" class="user-login-form">
+    <div class="picture-container">
+    <img class="picture" src="../../../assets/pokemon-seeklogo.png" alt="https://www.pngall.com/pokemon-logo-png/download/106687">
+    </div>
+    <h1>Pokemon trainer</h1>
     <fieldset class="user-input-fields">
         <input type="text" 
                 class="user-input" 
                 name="username" 
                 id="username" 
-                placeholder="Enter username"
+                placeholder="Username"
                 ngModel
                 #username = "ngModel" />
     </fieldset>
-
-    <button type="submit" class="btn btn-primary">Login</button>
+    <div class="user-login-button">
+    <button type="submit" class="button">Login</button>
+    </div>
 </form>
