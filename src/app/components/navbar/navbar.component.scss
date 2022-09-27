@@ -1,5 +1,5 @@
 $poke: rgb(253, 221, 59);
-$pokeDark: rgb(194, 169, 31);
+$pokeDark: rgb(220, 184, 32);
 
 .picture{
     margin-top: 90px;
@@ -82,14 +82,14 @@ $pokeDark: rgb(194, 169, 31);
 }
 .trainer:hover{
     background-color: $pokeDark;
-    color:white;
+    color:rgb(251, 252, 172);
 }
 .pokedex:hover{
     background-color: $pokeDark;
-    color:white;
+    color:rgb(251, 252, 172);
 }
 .logout:hover{
     background-color: $pokeDark;
-    color:white;
+    color:rgb(251, 252, 172);
 }
 
