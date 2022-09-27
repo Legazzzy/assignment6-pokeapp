@@ -1,6 +1,6 @@
 {
   "name": "assignment6",
-  "version": "16.x",
+  "version": "16.17.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
