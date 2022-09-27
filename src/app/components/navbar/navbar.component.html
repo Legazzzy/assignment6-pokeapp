@@ -1,7 +1,7 @@
-<nav class="navbar-1">
-    <img src='../../../assets/navbar_art.png' width="20%" height="20%"/>
-    <span class="navbar-title">Pokemon trainer</span>
-    <ng-container *ngIf='user !== undefined'>
+<ng-container *ngIf='user !== undefined'>
+    <nav class="navbar-1">
+        <img src='../../../assets/navbar_art.png' width="20%" height="20%"/>
+        <span class="navbar-title">Pokemon trainer</span>
         <ul class="navbar-buttons">
             <li>
                 <img src='../../../assets/trainer_art_placeholder.png' routerLink="/profile" width="10%" height="10%" alt="To trainer profile"/>
@@ -12,8 +12,8 @@
                 <a>Pokedex</a>
             </li>
             <li>
-                <a (click)="handleLogout()" routerLink="/login">Exit (Placeholder)</a>
+                <a (click)="handleLogout()"  routerLink="/login">Exit (Placeholder)</a>
             </li>
         </ul>
-    </ng-container>
-</nav>
+    </nav>
+</ng-container>
