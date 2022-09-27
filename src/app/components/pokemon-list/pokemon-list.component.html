@@ -1,5 +1,7 @@
+<h1>List of pokemon</h1>
 <ul>
+    <h1>Names:</h1>
     <li *ngFor="let pokemon of pokemons">
-        <span>{{ pokemon.name }}</span>
+        <span>{{ 'Name: ' + pokemon.name + '- Base experience' + pokemon.base_experience  }}</span>
     </li>
 </ul>
