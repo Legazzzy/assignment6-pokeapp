@@ -17,9 +17,7 @@ export class NavbarComponent implements OnInit {
   }
 
   handleLogout ():void {
-    if(window.confirm('Are you sure you want to log out?')) {
-      this.userService.user = undefined;
-    }
+    this.userService.user = undefined;
   }
 
   constructor(
