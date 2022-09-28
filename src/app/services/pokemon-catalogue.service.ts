@@ -23,7 +23,7 @@ export class PokemonCatalogueService {
       url: ''
     }]
   };
-  private pokemonList: Pokemon[] = [];
+  private _pokemonList: Pokemon[] = [];
   private _pokemons: Pokemon[] = [];
   private _error: string = "";
   private _loading : boolean = false;
