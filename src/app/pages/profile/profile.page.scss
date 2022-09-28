@@ -1,0 +1,45 @@
+$poke: rgb(253, 221, 59);
+$pokeDark: rgb(215, 199, 108);
+
+.title {
+    margin-left: 25px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+}
+
+.pokemon-row {
+    border: solid 2px black;
+    border-radius: 10px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    vertical-align: middle;
+    height: 60px;
+    border-style: none;
+    background-color: $poke;
+    margin-bottom: 15px;
+}
+
+.button-remove {
+    margin-top: 18px;
+    margin-right: 20px;
+    height: 25px;
+    font-size: large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    background-color:$pokeDark;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+
+}
+
+.names{
+    padding-top: 20px;
+    border-radius: 10px;
+    
+}

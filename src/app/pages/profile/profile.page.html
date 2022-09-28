@@ -1,1 +1,21 @@
-<p>profile works!</p>
+<h1 class="title">Trainer profile</h1>
+<div>
+    <p>Welcome {{ trainerName }}!</p>
+    <p>This is your personal trainer profile.</p>
+    <p>Below you can find a stat section that display some informations about you as a trainer. 
+        To the right you can see a list off all the pokemons currently in your collection</p>
+    <img src="../../../assets/pokemon_trainer.png" height="30%" width="25%"/>
+</div>
+<div>
+    <p>Name: {{ trainerName }}</p>
+    <p>You currently have {{ pokemons.length }} in your collection.</p>
+</div>
+<div>
+    <h1>Pokemons in your collection</h1>
+    <div *ngFor="let pokemon of pokemons" class="pokemon-row">
+        <img src={{pokemon.sprites.front_default}} />
+        <a class="names">{{ pokemon.name }}</a>
+        <button class="button-remove" (click)="handleRemove(pokemon.name)">Remove</button>
+    </div>
+</div>
+
