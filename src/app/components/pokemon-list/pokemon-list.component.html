@@ -1,6 +1,16 @@
-<h1 class="list-title">List of pokemon</h1>
-        <div *ngFor="let pokemon of pokemons" class="pokemon-row">
+
+<div class="main">
+<div class="listings">
+        <div *ngFor="let pokemon of pokemons" class="pokemon-row" (click)="display(pokemon)">
             <img src={{pokemon.sprites.front_default}} />
             <a class="names">{{ pokemon.name }}</a>
-            <button class="button-add">Add</button>
         </div>
+</div>
+<div class="info">
+    <p>Name: {{name}}</p>
+    <p>Height: {{height}}</p>
+    <p>Order: {{order}}</p>
+    <button class="addButton">Add pokemon</button>
+
+</div>
+</div>

@@ -1,42 +1,48 @@
 $poke: rgb(253, 221, 59);
-$pokeDark: rgb(215, 199, 108);
+$pokeDark: rgb(220, 184, 32);
 
 .list-title{
     margin-left: 25px;
 }
 
+.main {
+    display: flex;
+    justify-content: space-between;
+    width:max-content;
+    padding-top: 50px;
+}
+.info {
+    width: 500px;
+    border: solid 4px darkblue;
+
+    background-color: white;
+    border-radius: 20px;
+    height: 400px;
+}
+.listings{
+    width: 500px;
+}
+
 .pokemon-row {
-    border: solid 2px black;
-    border-radius: 10px;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5px;
+    border: solid 4px darkblue;
+    border-radius: 20px;
+    width: 200px;
     display: flex;
     justify-content: space-between;
     text-align: center;
+    margin-bottom: 5px;
     vertical-align: middle;
-    height: 60px;
-    border-style: none;
-    background-color: $poke;
-    margin-bottom: 15px;
+    height: 80px;
+    background-color: white;
 }
 
-.button-add {
-    margin-top: 18px;
-    margin-right: 20px;
-    height: 25px;
-    font-size: large;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
-    font-style: italic;
-    background-color:$pokeDark;
-    border-radius: 5px;
-    border-style: none;
-    cursor: pointer;
-
-}
 .names{
     padding-top: 20px;
     border-radius: 10px;
+<<<<<<< Updated upstream
     
+=======
+    margin-right: 20px;
+
+>>>>>>> Stashed changes
 }
