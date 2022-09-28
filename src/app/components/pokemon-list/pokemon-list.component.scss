@@ -12,10 +12,10 @@ $pokeDark: rgb(220, 184, 32);
     padding-top: 50px;
 }
 .info {
+    padding: 40px;
     width: 500px;
-    border: solid 4px darkblue;
-
-    background-color: white;
+    border-style: none;
+    background-color: $poke;
     border-radius: 20px;
     height: 400px;
 }
@@ -24,25 +24,38 @@ $pokeDark: rgb(220, 184, 32);
 }
 
 .pokemon-row {
-    border: solid 4px darkblue;
+    border-style: none;
     border-radius: 20px;
-    width: 200px;
+    width: 400px;
     display: flex;
+    background-color: $poke;
     justify-content: space-between;
     text-align: center;
     margin-bottom: 5px;
     vertical-align: middle;
-    height: 80px;
-    background-color: white;
+    height: 70px;
+    cursor: pointer;
 }
 
 .names{
     padding-top: 20px;
     border-radius: 10px;
-<<<<<<< Updated upstream
-    
-=======
     margin-right: 20px;
+}
+.addButton{
+    background-color: $pokeDark;
+    font-size: large;
+    border-style: none;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    cursor: pointer;
+}
+.addButton:hover{
+    color:rgb(251, 252, 172);
+}
+.pokemon-row:hover{
+    background-color: $pokeDark;
+    color:rgb(251, 252, 172);
 
->>>>>>> Stashed changes
 }

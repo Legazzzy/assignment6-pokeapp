@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -12,22 +13,20 @@ export class PokemonListComponent implements OnInit {
   @Input() pokemons: Pokemon[] = [];
 
 
-  public pokemonImage=null;
-  public name:string="";
-  public height:string="";
-  public order:string="";
 
-  constructor() { }
+  public pokemon:Pokemon|undefined=undefined;
+
+  constructor(private readonly userService: UserService) { }
 
   ngOnInit(): void {
   }
 
   display(p:Pokemon): void {
-    this.name = p.name;
-    this.height = p.height.toString();
-    this.order = p.order.toString();
+    this.pokemon = p;
+  }
 
-  
-
+  public handleAdd(pokemon:Pokemon): void {
+    let newPokemons:Pokemon[] | undefined = [...this.userService.user?.pokemon!,pokemon];
+    this.userService.updatePokemons(newPokemons);
   }
 }
