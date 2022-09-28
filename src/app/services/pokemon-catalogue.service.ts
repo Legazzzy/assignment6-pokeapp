@@ -93,7 +93,12 @@ export class PokemonCatalogueService {
             height: pokemonResult.height,
             weight: pokemonResult.weight,
             sprites: {
-              front_default: pokemonResult.sprites.front_default
+              front_default: pokemonResult.sprites.front_default,
+              other: {
+                dream_world: {
+                  front_default: pokemonResult.sprites.other.dream_world.front_default
+                }
+              }
             }
           })
         },
