@@ -7,10 +7,8 @@
         </div>
 </div>
 <div class="info">
-    <p>Name: {{name}}</p>
-    <p>Height: {{height}}</p>
-    <p>Order: {{order}}</p>
-    <button class="addButton">Add pokemon</button>
+    <p>Name: {{this.pokemon?.name}}</p>
+    <button class="addButton" (click)="handleAdd(this.pokemon!)">Get this pokemon</button>
 
 </div>
 </div>
