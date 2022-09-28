@@ -1,9 +1,6 @@
 $poke: rgb(253, 221, 59);
 $pokeDark: rgb(220, 184, 32);
 
-.list-title{
-    margin-left: 25px;
-}
 
 .main {
     display: flex;
@@ -12,18 +9,39 @@ $pokeDark: rgb(220, 184, 32);
     padding-top: 50px;
 }
 .info {
-    padding: 40px;
-    width: 500px;
+    padding-top:20px;
+    width: 400px;
     border-style: none;
     background-color: $poke;
     border-radius: 20px;
-    height: 400px;
+    height: 280px;
+    display: flex;
+    justify-content: space-evenly;
 }
+.infotext{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    padding-left: 20px;
+}
+h2{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-size: larger;
+    font-weight: bold;
+}
+.image{
+    height: 40px;
+    width: 40px;
+}
+
 .listings{
-    width: 500px;
+    margin-right: 50px;
+    height: 1000px;
+    overflow: scroll;
 }
 
 .pokemon-row {
+    margin-right: 10px;
     border-style: none;
     border-radius: 20px;
     width: 400px;

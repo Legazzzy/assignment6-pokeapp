@@ -7,8 +7,22 @@
         </div>
 </div>
 <div class="info">
-    <p>Name: {{this.pokemon?.name}}</p>
+    <div class="text">
+        <div class="infotext" *ngIf="this.pokemon==undefined">
+            <h2>Please select pokemon</h2>
+            <p>When you select pokemons you can see stats and a larger picture and of course add it to your collection.</p>
+        </div>
+        <div class="infotext" *ngIf="this.pokemon!=undefined">
+        <h2>{{this.pokemon?.name}}</h2>
+    <p>Height: {{this.pokemon?.height}}</p>
+    <p>Weight: {{this.pokemon?.weight}}</p>
+    <p>Order: {{this.pokemon?.order}}</p>
+    <p>Base experience: {{this.pokemon?.base_experience}}</p>
     <button class="addButton" (click)="handleAdd(this.pokemon!)">Get this pokemon</button>
-
+</div>
+    </div>
+    <div class="image" *ngIf="this.pokemon?.sprites?.other?.dream_world?.front_default!=undefined">
+    <img src={{this.pokemon?.sprites?.other?.dream_world?.front_default}} />
+    </div>
 </div>
 </div>
