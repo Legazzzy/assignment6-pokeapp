@@ -6,9 +6,9 @@ $pokeDark: rgb(220, 184, 32);
     display: flex;
     justify-content: space-between;
     width:max-content;
-    padding-top: 50px;
 }
 .info {
+    margin-top: 40px;
     padding-top:20px;
     width: 400px;
     border-style: none;
@@ -35,6 +35,7 @@ h2{
 }
 
 .listings{
+    padding-top: 40px;
     margin-right: 50px;
     height: 1000px;
     overflow: scroll;
@@ -55,13 +56,15 @@ h2{
     cursor: pointer;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
-
 }
 
 .names{
-    padding-top: 20px;
+    padding-top: 25px;
     border-radius: 10px;
     margin-right: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-weight: bold;
 }
 .addButton{
     background-color: $pokeDark;
