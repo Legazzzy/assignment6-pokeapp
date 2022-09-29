@@ -31,16 +31,6 @@ export class PokemonListComponent implements OnInit {
     
     if (newPokemons !== undefined) {
       this.userService.updatePokemons(newPokemons);
-
-    this.userService.patchUser(this.userService.user?.id!)
-      .subscribe({
-        next: (response:any) => {
-          console.log('NEXT', response);  
-        },
-        error: (error: HttpErrorResponse) => {
-          console.log('ERROR', error);
-        }
-      })
     }
   }
 }
