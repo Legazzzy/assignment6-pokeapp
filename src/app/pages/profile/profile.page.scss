@@ -1,33 +1,45 @@
 $poke: rgb(253, 221, 59);
 $pokeDark: rgb(215, 199, 108);
 
-.title {
-    margin-left: 25px;
+.welcome-text {
+    margin-top: 100px;
+    margin-left:15%;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
+
 }
 
-.pokemon-row {
-    border: solid 2px black;
-    border-radius: 10px;
+.pokemon-list{
+    margin-top: 100px;
+    display: flex;
     width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    overflow: scroll;
+    padding-right: 10%;
+}
+.image{
+    margin-top: 20px;
+    height: 300px;
+    width: 200px;
+}
+.pokemon-row {
+    border: solid 5px $pokeDark;
+    border-radius: 15px;
+    width: 300px;
+    margin-left: 30px;
+    height:600px;
     margin-top: 5px;
     display: flex;
-    justify-content: space-between;
-    text-align: center;
-    vertical-align: middle;
-    height: 60px;
-    border-style: none;
+    flex-direction: column;
+    justify-content: space-around;
     background-color: $poke;
     margin-bottom: 15px;
 }
 
 .button-remove {
-    margin-top: 18px;
-    margin-right: 20px;
     height: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
     font-size: large;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
@@ -41,5 +53,14 @@ $pokeDark: rgb(215, 199, 108);
 .names{
     padding-top: 20px;
     border-radius: 10px;
+    margin-left: 20px;
     
+}
+
+.abilities{
+    line-height: 0.1;
+}
+.ability {
+    margin-left: 20px;
+    height: 20px;
 }

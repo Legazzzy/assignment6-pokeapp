@@ -16,12 +16,15 @@ $pokeDark: rgb(220, 184, 32);
     border-radius: 20px;
     height: 280px;
     display: flex;
-    justify-content: space-evenly;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
 }
 .infotext{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
     padding-left: 20px;
+    width: 250px;
+
 }
 h2{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -74,6 +77,8 @@ h2{
     padding-left: 15px;
     padding-right: 15px;
     cursor: pointer;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
 }
 .addButton:hover{
     color:rgb(251, 252, 172);
@@ -82,4 +87,13 @@ h2{
     background-color: $pokeDark;
     color:rgb(251, 252, 172);
 
+}
+.haveThis{
+    background-color: $pokeDark;
+    font-size: x-large;
+    border-style: none;
+    border-radius: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color:green;
 }

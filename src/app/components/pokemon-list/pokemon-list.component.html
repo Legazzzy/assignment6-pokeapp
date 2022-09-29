@@ -22,7 +22,7 @@
         <button class="addButton" (click)="handleAdd(this.pokemon!)">Get this pokemon</button>
     </div>
     <div *ngIf="!duplicateChecker(this.userService.user?.pokemon, this.pokemon)">
-        <a>Already in your collection</a>
+        <a class="haveThis">✔</a>
     </div>
 </div>
     </div>

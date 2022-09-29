@@ -1,25 +1,17 @@
-<h1 class="title">Trainer profile</h1>
-<div>
-    <p>Welcome {{ trainerName }}!</p>
+<div class="welcome-text">
+    <h2>Welcome {{ trainerName }}</h2>
     <p>This is your personal trainer profile.</p>
     <p>Below you can find a stat section that display some informations about you as a trainer. 
-        To the right you can see a list off all the pokemons currently in your collection</p>
-    <img src="../../../assets/pokemon_trainer.png" height="30%" width="25%"/>
+        Below you can see a list off all the pokemons currently in your collection ({{ pokemons.length }})</p>
 </div>
-<div>
-    <p>Name: {{ trainerName }}</p>
-    <p>You currently have {{ pokemons.length }} in your collection.</p>
-</div>
-<div>
-    <h1>Pokemons in your collection</h1>
+<div class="pokemon-list">
     <div *ngFor="let pokemon of pokemons" class="pokemon-row">
-        <img src={{pokemon.sprites.front_default}} />
-        <img src={{pokemon.sprites.other.dream_world.front_default}} />
-        <p>Abilities</p>
-        <ul *ngFor="let ab of pokemon.abilities">
+        <img class="image" src={{pokemon.sprites.other.dream_world.front_default}} />
+        <h2 class="names">{{ pokemon.name }}</h2>
+        <p class="ability">Abilities</p>
+        <ul *ngFor="let ab of pokemon.abilities" class="abilities">
             <li>{{ab.ability.name}}</li>
         </ul>
-        <a class="names">{{ pokemon.name }}</a>
         <button class="button-remove" (click)="handleRemove(pokemon.name)">Remove</button>
     </div>
 </div>
