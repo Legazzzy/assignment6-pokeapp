@@ -4,6 +4,7 @@ $pokeDark: rgb(215, 199, 108);
 .welcome-text {
     margin-top: 100px;
     margin-left:15%;
+    margin-right: 15%;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     font-style: italic;
 
@@ -57,10 +58,15 @@ button:hover{
     padding-top: 20px;
     border-radius: 10px;
     margin-left: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-style: italic;
+    font-weight: bold;
     
 }
 
 .abilities{
     line-height: 0.1;
-
+}
+.p{
+    list-style: none;
 }

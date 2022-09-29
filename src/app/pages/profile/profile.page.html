@@ -9,7 +9,7 @@
         <img class="image" src={{pokemon.sprites.other.dream_world.front_default}} height="200px"/>
         <h2 class="names">{{ pokemon.name }}</h2>
         <ul *ngFor="let ab of pokemon.abilities" class="abilities">
-            <li>{{ab.ability.name}}</li>
+            <li class="p">{{ab.ability.name}}</li>
         </ul>
         <button class="button" (click)="handleRemove(pokemon.name)">Discard</button>
     </div>
