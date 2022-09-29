@@ -26,23 +26,21 @@ export class UserService {
   }
 
   public updatePokemons(pokemons: Pokemon[]): void {
-    if (pokemons !== this._user?.pokemon) {
-      let newUser:User | undefined = {
-        id: this._user?.id!,
-        username: this._user?.username!,
-        pokemon: pokemons
-      }
-      this.user = newUser;
-      this.patchUser(this.user?.id!)
-      .subscribe({
-        next: (response:any) => {
-          console.log('NEXT', response);  
-        },
-        error: (error: HttpErrorResponse) => {
-          console.log('ERROR', error);
-        }
-      })
+    let newUser:User | undefined = {
+      id: this._user?.id!,
+      username: this._user?.username!,
+      pokemon: pokemons
     }
+    this.user = newUser;
+    this.patchUser(this.user?.id!)
+    .subscribe({
+      next: (response:any) => {
+        console.log('NEXT', response);  
+      },
+      error: (error: HttpErrorResponse) => {
+        console.log('ERROR', error);
+      }
+    })
   }
 
   public patchUser(id: number): Observable<any> {
