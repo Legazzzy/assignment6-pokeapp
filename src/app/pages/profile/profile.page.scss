@@ -13,13 +13,13 @@ $pokeDark: rgb(215, 199, 108);
     margin-top: 100px;
     display: flex;
     width: 90%;
-    overflow: scroll;
+    overflow:scroll;
     padding-right: 10%;
 }
 .image{
     margin-top: 20px;
     height: 300px;
-    width: 200px;
+    width: 300px;
 }
 .pokemon-row {
     border: solid 5px $pokeDark;
@@ -59,8 +59,5 @@ $pokeDark: rgb(215, 199, 108);
 
 .abilities{
     line-height: 0.1;
-}
-.ability {
-    margin-left: 20px;
-    height: 20px;
+
 }
