@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
@@ -33,20 +33,17 @@ export class UserService {
         pokemon: pokemons
       }
       this.user = newUser;
+      this.patchUser(this.user?.id!)
+      .subscribe({
+        next: (response:any) => {
+          console.log('NEXT', response);  
+        },
+        error: (error: HttpErrorResponse) => {
+          console.log('ERROR', error);
+        }
+      })
     }
   }
-
-  /*
-  public patchUse(id:number): Observable<User | undefined> {
-    return this.http.patch<User | undefined>(`${apiUsers}/${id}`,
-    {
-      "pokemon": this._user?.pokemon
-    })
-    .pipe(
-      map((response: User | undefined) => response)
-    )
-  }
-  */
 
   public patchUser(id: number): Observable<any> {
     
