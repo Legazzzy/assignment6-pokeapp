@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
-import { User } from 'src/app/models/user.model';
+import { PokemonCatalogueService } from 'src/app/services/pokemon-catalogue.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -13,11 +13,11 @@ export class PokemonListComponent implements OnInit {
 
   @Input() pokemons: Pokemon[] = [];
 
-
-
   public pokemon:Pokemon|undefined=undefined;
 
-  constructor(public readonly userService: UserService) { }
+  constructor(
+    public readonly userService: UserService,
+    public readonly pokemonCatalogue: PokemonCatalogueService) { }
 
   ngOnInit(): void {
   }
@@ -27,7 +27,6 @@ export class PokemonListComponent implements OnInit {
   }
 
   public duplicateChecker = (arrayOfPokemon: Pokemon[] | undefined, pokemonToCheck: Pokemon | undefined) => {
-
     for (let pokemon of arrayOfPokemon!) {
         if (pokemon.id == pokemonToCheck?.id) {
             return false;
