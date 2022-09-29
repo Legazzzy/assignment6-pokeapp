@@ -6,6 +6,8 @@ import { Pokemon } from '../models/pokemon.model';
 import { PokemonFetch }  from '../models/pokemonFetch.model';
 import { HttpClient } from '@angular/common/http';
 import { CapitalizedUtil } from '../utils/capitalized.util';
+import { StorageUtil } from '../utils/storage.util';
+import { StorageKeys } from '../enums/storage-keys.enum';
 
 const { apiPokemons} = environment;
 
@@ -70,6 +72,7 @@ export class PokemonCatalogueService {
           this._error = error.message;
         }
       })
+      StorageUtil.storageSave(StorageKeys.Pokemon, this.pokemons);
     }
 
 
@@ -92,6 +95,7 @@ export class PokemonCatalogueService {
             order: pokemonResult.order,
             height: pokemonResult.height,
             weight: pokemonResult.weight,
+            abilities: pokemonResult.abilities,
             sprites: {
               front_default: pokemonResult.sprites.front_default,
               other: {

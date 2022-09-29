@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonCatalogueService } from 'src/app/services/pokemon-catalogue.service';
 import { Pokemon } from 'src/app/models/pokemon.model';
+import { StorageUtil } from 'src/app/utils/storage.util';
+import { StorageKeys } from 'src/app/enums/storage-keys.enum';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-pokemon-catalogue',
@@ -22,13 +25,16 @@ export class PokemonCataloguePage implements OnInit {
   }
 
   constructor(
-    private readonly pokemonCatalogueService: PokemonCatalogueService
+    private readonly pokemonCatalogueService: PokemonCatalogueService,
+    private readonly userService: UserService
   ) { }
 
   ngOnInit(): void {
-    if (this.pokemonCatalogueService.pokemons.length == 0) {
+    const storedPokemon:Pokemon[] | undefined = StorageUtil.storageRead(StorageKeys.Pokemon);
+    if (storedPokemon?.length === 0 || storedPokemon === undefined) {
       this.pokemonCatalogueService.findAllPokemons();
     }
+    this.pokemonCatalogueService.pokemons = StorageUtil.storageRead(StorageKeys.Pokemon)!;
   }
 
 }
