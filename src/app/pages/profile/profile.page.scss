@@ -35,7 +35,7 @@ $pokeDark: rgb(215, 199, 108);
     margin-bottom: 15px;
 }
 
-.button-remove {
+.button {
     height: 25px;
     margin-left: 20px;
     margin-right: 20px;
@@ -46,8 +46,11 @@ $pokeDark: rgb(215, 199, 108);
     background-color:$pokeDark;
     border-radius: 5px;
     border-style: none;
+    font-weight: bold;
     cursor: pointer;
-
+}
+button:hover{
+    color: red;
 }
 
 .names{
