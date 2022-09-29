@@ -5,6 +5,11 @@ export interface Pokemon {
     order: number;
     height: number;
     weight: number;
+    abilities: [ {
+        ability: {
+            name: string;
+        }
+    }];
     sprites: {
         front_default: string;
         other: {

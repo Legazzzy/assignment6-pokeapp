@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit, Input } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { UserService } from 'src/app/services/user.service';
@@ -27,6 +28,19 @@ export class PokemonListComponent implements OnInit {
 
   public handleAdd(pokemon:Pokemon): void {
     let newPokemons:Pokemon[] | undefined = [...this.userService.user?.pokemon!,pokemon];
-    this.userService.updatePokemons(newPokemons);
+    
+    if (newPokemons !== undefined) {
+      this.userService.updatePokemons(newPokemons);
+
+    this.userService.patchUser(this.userService.user?.id!)
+      .subscribe({
+        next: (response:any) => {
+          console.log('NEXT', response);  
+        },
+        error: (error: HttpErrorResponse) => {
+          console.log('ERROR', error);
+        }
+      })
+    }
   }
 }

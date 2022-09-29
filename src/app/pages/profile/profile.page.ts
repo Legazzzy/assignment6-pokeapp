@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon.model';
 import { UserService } from 'src/app/services/user.service';
@@ -11,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 export class ProfilePage implements OnInit {
 
   constructor(
-    private readonly userService: UserService
+    private readonly userService: UserService,
   ) { }
 
   private _trainerName: string | undefined = this.userService.user?.username;
@@ -43,6 +44,16 @@ export class ProfilePage implements OnInit {
     })
     this._pokemons = newPokemons!;
     this.userService.updatePokemons(this._pokemons);
+
+    this.userService.patchUser(this.userService.user?.id!)
+      .subscribe({
+        next: (response:any) => {
+          console.log('NEXT', response);  
+        },
+        error: (error: HttpErrorResponse) => {
+          console.log('ERROR', error);
+        }
+      })
   }
 
   public removePokemon(pokemon: Pokemon): void {
