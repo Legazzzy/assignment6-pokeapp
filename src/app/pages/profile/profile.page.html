@@ -6,9 +6,8 @@
 </div>
 <div class="pokemon-list">
     <div *ngFor="let pokemon of pokemons" class="pokemon-row">
-        <img class="image" src={{pokemon.sprites.other.dream_world.front_default}} />
+        <img class="image" src={{pokemon.sprites.other.dream_world.front_default}} height="200px"/>
         <h2 class="names">{{ pokemon.name }}</h2>
-        <p class="ability">Abilities</p>
         <ul *ngFor="let ab of pokemon.abilities" class="abilities">
             <li>{{ab.ability.name}}</li>
         </ul>
