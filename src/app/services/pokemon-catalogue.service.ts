@@ -29,6 +29,7 @@ export class PokemonCatalogueService {
   private _pokemons: Pokemon[] = [];
   private _error: string = "";
   private _loading : boolean = false;
+  public animatedSprites = new Map();
 
   get pokemonsFetched(): PokemonFetch {
     return this._pokemonFetched;
@@ -55,6 +56,10 @@ export class PokemonCatalogueService {
   }
 
   constructor(private readonly http: HttpClient) {}
+
+  public populateAnimatedMap (pokemon: Pokemon) {
+    this.animatedSprites.set(pokemon.id, pokemon.sprites.versions['generation-v']['black-white'].animated.front_default);
+  }
 
   public findAllPokemons(): void {
     this._loading = true;
@@ -87,23 +92,35 @@ export class PokemonCatalogueService {
       )
       .subscribe({
         next: (pokemonResult: Pokemon) => {
-          this._pokemons.push({
-            id: pokemonResult.id,
-            name: CapitalizedUtil.capitalized(pokemonResult.name),
-            base_experience: pokemonResult.base_experience,
-            order: pokemonResult.order,
-            height: pokemonResult.height,
-            weight: pokemonResult.weight,
-            abilities: pokemonResult.abilities,
-            sprites: {
-              front_default: pokemonResult.sprites.front_default,
-              other: {
-                dream_world: {
-                  front_default: pokemonResult.sprites.other.dream_world.front_default
-                }
+          if (pokemonResult.sprites.versions['generation-v']['black-white'].animated.front_default !== null) {
+            this.populateAnimatedMap(pokemonResult);
+            this._pokemons.push({
+              id: pokemonResult.id,
+              name: CapitalizedUtil.capitalized(pokemonResult.name),
+              base_experience: pokemonResult.base_experience,
+              order: pokemonResult.order,
+              height: pokemonResult.height,
+              weight: pokemonResult.weight,
+              abilities: pokemonResult.abilities,
+              sprites: {
+                front_default: pokemonResult.sprites.front_default,
+                other: {
+                  dream_world: {
+                    front_default: pokemonResult.sprites.other.dream_world.front_default
+                  }
+                },
+                versions: {
+                  'generation-v': {
+                      'black-white': {
+                          animated: {
+                            front_default: pokemonResult.sprites.versions['generation-v']['black-white'].animated.front_default
+                          }
+                      }
+                  }
               }
-            }
-          })
+              }
+            })
+          }
         },
         error: (error: HttpErrorResponse) => {
           this._error = error.message;

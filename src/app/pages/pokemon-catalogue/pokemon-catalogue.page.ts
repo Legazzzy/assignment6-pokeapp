@@ -26,12 +26,11 @@ export class PokemonCataloguePage implements OnInit {
 
   constructor(
     private readonly pokemonCatalogueService: PokemonCatalogueService,
-    private readonly userService: UserService
   ) { }
 
   ngOnInit(): void {
     const storedPokemon:Pokemon[] | undefined = StorageUtil.storageRead(StorageKeys.Pokemon);
-    if (storedPokemon?.length === 0 || storedPokemon === undefined) {
+    if (storedPokemon?.length === 0 || storedPokemon === undefined || this.pokemonCatalogueService.pokemons.length === 0) {
       this.pokemonCatalogueService.findAllPokemons();
     }
     this.pokemonCatalogueService.pokemons = StorageUtil.storageRead(StorageKeys.Pokemon)!;

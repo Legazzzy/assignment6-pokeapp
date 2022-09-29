@@ -2,7 +2,7 @@
 <div class="main">
 <div class="listings">
         <div *ngFor="let pokemon of pokemons" class="pokemon-row" (click)="display(pokemon)">
-            <img src={{pokemon.sprites.front_default}} />
+            <img src={{this.pokemonCatalogue.animatedSprites.get(pokemon!.id)}} />
             <a class="names">{{ pokemon.name }}</a>
         </div>
 </div>
