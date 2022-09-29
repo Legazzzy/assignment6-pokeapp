@@ -87,7 +87,6 @@ export class PokemonCatalogueService {
       )
       .subscribe({
         next: (pokemonResult: Pokemon) => {
-          console.log(pokemonResult);
           this._pokemons.push({
             id: pokemonResult.id,
             name: CapitalizedUtil.capitalized(pokemonResult.name),

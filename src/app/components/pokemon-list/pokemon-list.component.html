@@ -18,7 +18,12 @@
     <p>Weight: {{this.pokemon?.weight}}</p>
     <p>Order: {{this.pokemon?.order}}</p>
     <p>Base experience: {{this.pokemon?.base_experience}}</p>
-    <button class="addButton" (click)="handleAdd(this.pokemon!)">Get this pokemon</button>
+    <div *ngIf="duplicateChecker(this.userService.user?.pokemon, this.pokemon)">
+        <button class="addButton" (click)="handleAdd(this.pokemon!)">Get this pokemon</button>
+    </div>
+    <div *ngIf="!duplicateChecker(this.userService.user?.pokemon, this.pokemon)">
+        <a>Already in your collection</a>
+    </div>
 </div>
     </div>
     <div class="image" *ngIf="this.pokemon?.sprites?.other?.dream_world?.front_default!=undefined">
