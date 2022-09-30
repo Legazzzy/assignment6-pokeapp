@@ -1,3 +1,4 @@
+/** Constant used to store enviroment variables */
 export const environment = {
   production: false,
   apiUsers: "https://assignment2-sign-translator.herokuapp.com/trainers",

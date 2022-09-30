@@ -1,3 +1,4 @@
+/** Interface used to define a Pokemon object */
 export interface Pokemon {
     id: string;
     name: string;

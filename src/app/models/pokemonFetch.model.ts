@@ -1,3 +1,4 @@
+/** Interface used to define a PokemonFetch object */
 export interface PokemonFetch {
     count: number;
     next: string;

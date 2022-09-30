@@ -12,19 +12,31 @@ const { apiUsers, apiKey} = environment;
 @Injectable({
   providedIn: 'root'
 })
+
+/** Service responsible for handling a user, and different actions associated with a user. */
 export class UserService {
+
+  /** Constructor, creates an instance of HttpClient */
+  constructor(
+    private readonly http: HttpClient
+  ) { this._user = StorageUtil.storageRead<User>(StorageKeys.User); }
 
   private _user?:User;
   
+  /** Get method for user */
   get user(): User | undefined {
     return this._user;
   }
 
+  /** Set method for user*/
   set user(user: User | undefined) {
     StorageUtil.storageSave<User>(StorageKeys.User, user!);
     this._user = user;
   }
 
+  /** Method used to update a users collection of pokemons.
+   * @param pokemons(Pokemon[]) : The updated array of pokemons
+   */
   public updatePokemons(pokemons: Pokemon[]): void {
     let newUser:User | undefined = {
       id: this._user?.id!,
@@ -43,7 +55,12 @@ export class UserService {
     })
   }
 
-  public patchUser(id: number): Observable<any> {
+  /**
+   * Method used to patch a user with a new updated array of pokemons
+   * @param id(number) : The ID of the user we want to patch
+   * @returns A observable user object
+   */
+  public patchUser(id: number): Observable<User | undefined> {
     
     const headers = new HttpHeaders({
       "Content-Type": "application/json",
@@ -54,11 +71,4 @@ export class UserService {
       pokemon: this._user?.pokemon
     }, { headers } )
   }
-  
-
-  constructor(
-    private readonly http: HttpClient
-  ) { 
-    this._user = StorageUtil.storageRead<User>(StorageKeys.User);
-   }
 }
