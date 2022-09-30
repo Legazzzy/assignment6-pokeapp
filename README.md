@@ -6,15 +6,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Usage
 
-You can access this app via [Heroku](https://pokeapp-assignment6.herokuapp.com/pokemons)
-Use `ng serve` to run locally. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
+You can access this app via [Heroku](https://pokeapp-assignment6.herokuapp.com/pokemons) or
+use `ng serve` to run locally. Navigate to `http://localhost:4200/`.
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
 ## Project structure
-´´´
+```
 .
 |-- components
 |   |-- login-form
@@ -29,7 +28,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 |   `-- profile
 |-- services
 `-- utils
-´´´
+```
 
 ## Maintainers
 
