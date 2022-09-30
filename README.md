@@ -1,27 +1,40 @@
 # Assignment6
 
+This is a Pokemon Trainer app. You will be able to brows pokemons, see their stats and add it to your collection. 
+When a pokemon has been added to your collection you can manage them in your profile page.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
 
-## Development server
+## Usage
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+You can access this app via [Heroku](https://pokeapp-assignment6.herokuapp.com/pokemons)
+Use `ng serve` to run locally. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Project structure
+´´´
+.
+|-- components
+|   |-- login-form
+|   |-- navbar
+|   `-- pokemon-list
+|-- enums
+|-- guards
+|-- models
+|-- pages
+|   |-- login
+|   |-- pokemon-catalogue
+|   `-- profile
+|-- services
+`-- utils
+´´´
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Maintainers
 
-## Running end-to-end tests
+Sondre Melhus, Marius Eriksen, and Vegard Gunnarson
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Licence
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Open licence.
