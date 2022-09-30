@@ -1,8 +1,10 @@
 <div class="welcome-text">
-    <h2>Welcome {{ trainerName }}</h2>
+    <h2>Hi {{ trainerName }}</h2>
     <p>This is your personal trainer profile.</p>
-    <p>Below you can find a stat section that display some informations about you as a trainer. 
-        Below you can see a list off all the pokemons currently in your collection ({{ pokemons.length }})</p>
+    <div *ngIf="pokemons.length>=10">Wow, you have {{ pokemons.length }} Pokemons in your collection, good job {{ trainerName}}!!</div>
+    <div *ngIf="pokemons.length>=2&&pokemons.length<=9">Below you can see a list off all the pokemons currently in your collection ({{ pokemons.length }}).</div>
+    <div *ngIf="pokemons.length==1">You currently have one Pokemon. Remember, you can always add more in the Pokedex section.</div>
+    <div *ngIf="pokemons.length==0">You don't have any pokemons in your collection yet, navigate to Pokedex and add a few to get started.</div>
 </div>
 <div class="pokemon-list">
     <div *ngFor="let pokemon of pokemons" class="pokemon-row">
