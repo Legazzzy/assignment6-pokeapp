@@ -9,10 +9,13 @@ import { UserService } from 'src/app/services/user.service';
   templateUrl: './login-form.component.html',
   styleUrls: ['./login-form.component.scss']
 })
+
+/** Component responsible for handling the login form */
 export class LoginFormComponent implements OnInit {
 
   @Output() login: EventEmitter<void> = new EventEmitter();
 
+  /** Constructor, creates an instance of LofinService and UserService */
   constructor(
     private readonly loginService: LoginService,
     private readonly userService: UserService
@@ -24,10 +27,15 @@ export class LoginFormComponent implements OnInit {
     }
   }
 
+  /** Handle login button press */
   public loginSubmit(loginForm: NgForm): void {
 
+    /** username value that user has put in 
+     * @param username : value chosen by the user when logging in
+    */
     const { username } = loginForm.value;
 
+    /** uses login service with username to log in*/
     this.loginService.login(username)
     .subscribe({
       next: (user: User) => {
