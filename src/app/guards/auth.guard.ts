@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { StorageKeys } from '../enums/storage-keys.enum';
 import { UserService } from '../services/user.service';
+import { StorageUtil } from '../utils/storage.util';
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +14,14 @@ export class AuthGuard implements CanActivate {
   /** Constructor, creates an instance of Router and UserService */
   constructor(
     private readonly router:Router,
-    private readonly userService: UserService
+    private readonly storageUtil: StorageUtil
   ) {}
 
   /** Method used to define a users page access rights */
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.userService.user) {
+    if (StorageUtil.storageRead(StorageKeys.User)) {
       return true;
     } else {
       this.router.navigateByUrl("/login");
