@@ -1,8 +1,10 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { StorageKeys } from 'src/app/enums/storage-keys.enum';
 import { User } from 'src/app/models/user.model';
 import { LoginService } from 'src/app/services/login.service';
 import { UserService } from 'src/app/services/user.service';
+import { StorageUtil } from 'src/app/utils/storage.util';
 
 @Component({
   selector: 'app-login-form',
@@ -19,7 +21,7 @@ export class LoginFormComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    if (this.userService.user) {
+    if (StorageUtil.storageRead(StorageKeys.User)) {
       this.login.emit();
     }
   }
